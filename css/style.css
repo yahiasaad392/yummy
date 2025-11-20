@@ -1,0 +1,228 @@
+:root {
+  --main-color: #0d0d0d;
+  --text-color: #f9f6f6;
+}
+
+body {
+  background-color: var(--main-color);
+  color: var(--text-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  color: #fff;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.3s infinite linear;
+  transform: translateZ(0);
+}
+
+@keyframes mulShdSpin {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -0.5em, 3em 0 0 0, 2em 2em 0 0.2em,
+      0 3em 0 0, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0,
+      0 3em 0 0.2em, -2em 2em 0 0, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -0.5em,
+      0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -0.5em, -3em 0 0 0, -2em -2em 0 0.2em;
+  }
+  87.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -0.5em, -2em -2em 0 0;
+  }
+}
+
+.side-nav-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100%;
+  z-index: 99;
+  display: flex;
+}
+
+.nav-tab {
+  background-color: #000;
+  width: 250px;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.5s;
+}
+
+.nav-header {
+  background-color: #f8f9fa;
+  width: 60px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  width: 40px;
+}
+
+.open-close-icon {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #000;
+}
+
+.nav-links li {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px 0;
+  font-size: 1.1rem;
+  position: relative;
+  top: 300px;
+  transition: top 0.5s;
+}
+
+.nav-footer i {
+  margin: 0 5px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.nav-footer p {
+  font-size: 12px;
+  color: #999;
+}
+
+.meal-layer {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  transition: top 0.5s;
+  color: #000;
+  overflow: hidden;
+}
+
+.meal:hover .meal-layer {
+  top: 0;
+}
+
+.meal {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.meal img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.fa-house-laptop,
+.fa-drumstick-bite {
+  font-size: 4rem;
+}
+
+.contact input {
+  background-color: #fff;
+  color: #000;
+}
+
+.contact input:focus {
+  box-shadow: none;
+  border-color: #ced4da;
+}
+
+.alert {
+  display: none;
+  margin-top: 5px;
+  font-size: 0.8rem;
+  padding: 5px 10px;
+}
+
+.tags span {
+  background-color: #f8d7da;
+  color: #842029;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  margin-right: 5px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.recipes span {
+  background-color: #cff4fc;
+  color: #055160;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  margin-right: 5px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
